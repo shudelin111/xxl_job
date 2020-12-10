@@ -2,7 +2,7 @@
 cd `dirname $0`
 
 img_mvn="maven:3.3.3-jdk-8"                 # docker image of maven
-m2_cache=/user/local/apache-maven-3.6.3/repository                 # the local maven cache dir
+m2_cache=~/.m2                 # the local maven cache dir
 proj_home=$PWD                              # the project root dir
 img_output="commons/xxl-job"         # output image tag
 
@@ -10,7 +10,7 @@ git pull  # should use git clone https://name:pwd@xxx.git
 
 echo "use docker maven"
 docker run --rm \
-   -v $m2_cache:/usr/local/repository \
+   -v $m2_cache:/root/.m2 \
    -v $proj_home:/usr/local/work \
    -w /usr/local/work $img_mvn mvn clean package -U -Dmaven.test.skip=true
 
