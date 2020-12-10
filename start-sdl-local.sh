@@ -10,17 +10,11 @@ git pull  # should use git clone https://name:pwd@xxx.git
 
 echo "use docker maven"
 docker run --rm \
-   -v $m2_cache:/user/local/apache-maven-3.6.3/repository \
-   -v $proj_home:/usr/local/maven \
-   -w /usr/local/maven $img_mvn mvn clean package -U -Dmaven.test.skip=true
+   -v $m2_cache:/usr/local/repository \
+   -v $proj_home:/usr/local/work \
+   -w /usr/local/work $img_mvn mvn clean package -U -Dmaven.test.skip=true
 
-
-   docker run --rm \
-   -v /user/local/apache-maven-3.6.3/repository:/user/local/apache-maven-3.6.3/repository \
-   -v /root/commons/xxl_job/xxl-job-admin:/usr/local/maven \
-   -w /usr/local/maven maven:3.3.3-jdk-8 mvn clean package -U -Dmaven.test.skip=true
-
-sudo mv $proj_home/target/xxl-job-admin-*.jar $proj_home/app.jar # 兼容所有sh脚本
+sudo mv $proj_home/xxl-job-admin/target/xxl-job-admin-*.jar $proj_home/app.jar # 兼容所有sh脚本
 docker build -t $img_output .
 
 mkdir -p $PWD/logs
@@ -34,8 +28,8 @@ version=`date "+%Y%m%d%H"`
 # 启动镜像
 docker run -d --restart=on-failure:5 --privileged=true \
     --net=host \
-    -w /home \
-    -v $PWD/logs:/home/logs \
+    -w /usr/local/work \
+    -v $PWD/doc/logs:/usr/local/work/doc/logs \
     --name xxl-job commons/xxl-job \
 
 docker logs -f xxl-job
