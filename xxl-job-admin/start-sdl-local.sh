@@ -11,8 +11,8 @@ git pull  # should use git clone https://name:pwd@xxx.git
 echo "use docker maven"
 docker run --rm \
    -v $m2_cache:/user/local/apache-maven-3.6.3/repository \
-   -v $proj_home:/usr/local/apache-maven-3.6.3 \
-   -w /usr/local/apache-maven-3.6.3 $img_mvn mvn clean package -U -Dmaven.test.skip=true
+   -v $proj_home:/usr/local/maven \
+   -w /usr/local/maven $img_mvn mvn clean package -U -Dmaven.test.skip=true
 
 sudo mv $proj_home/target/xxl-job-admin-*.jar $proj_home/app.jar # 兼容所有sh脚本
 docker build -t $img_output .
