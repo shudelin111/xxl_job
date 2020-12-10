@@ -1,4 +1,4 @@
-FROM fabric8/java-jboss-openjdk8-jdk
+FROM openjdk:8-jre-slim
 USER root
 
 MAINTAINER xuxueli
