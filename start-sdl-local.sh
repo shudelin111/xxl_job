@@ -14,7 +14,7 @@ docker run --rm \
    -v $proj_home:/usr/local/work \
    -w /usr/local/work $img_mvn mvn clean package -U -Dmaven.test.skip=true
 
-sudo mv $proj_home/xxl-job-admin/target/xxl-job-admin-*.jar $proj_home/app.jar # 兼容所有sh脚本
+sudo mv $proj_home/xxl-job-admin/target/xxl-job-admin-*.jar $proj_home/xxl-job-admin/target/app.jar # 兼容所有sh脚本
 docker build -t $img_output .
 
 mkdir -p $PWD/logs
@@ -31,5 +31,13 @@ docker run -d --restart=on-failure:5 --privileged=true \
     -w /usr/local/work \
     -v $PWD/doc/logs:/usr/local/work/doc/logs \
     --name xxl-job commons/xxl-job \
+    java \
+        -Duser.timezone=Asia/Shanghai \
+        -XX:+PrintGCDateStamps \
+        -XX:+PrintGCTimeStamps \
+        -XX:+PrintGCDetails \
+        -XX:+HeapDumpOnOutOfMemoryError \
+        -Xloggc:logs/gc_$version.log \
+        -jar /usr/local/work/demo.jar \
 
 docker logs -f xxl-job
