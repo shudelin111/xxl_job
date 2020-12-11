@@ -7,7 +7,7 @@ proj_home=$PWD                              # the project root dir
 img_output="commons/xxl-job"         # output image tag
 
 git pull  # should use git clone https://name:pwd@xxx.git
-
+COPY settings.xml /usr/share/maven/settings.xml
 echo "use docker maven"
 docker run --rm \
    -v $m2_cache:/root/.m2 \
