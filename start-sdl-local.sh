@@ -38,6 +38,6 @@ docker run -d --restart=on-failure:5 --privileged=true \
         -XX:+PrintGCDetails \
         -XX:+HeapDumpOnOutOfMemoryError \
         -Xloggc:logs/gc_$version.log \
-        -jar /usr/local/work/demo.jar \
+        -jar /usr/local/work/app.jar \
 
 docker logs -f xxl-job
