@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-slim
+FROM fabric8/java-jboss-openjdk8-jdk
 USER root
 
 MAINTAINER shudl
