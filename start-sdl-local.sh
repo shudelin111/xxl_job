@@ -15,6 +15,7 @@ docker run --rm \
    -w /usr/local/work $img_mvn mvn clean package -U -Dmaven.test.skip=true
 
 sudo mv $proj_home/xxl-job-admin/target/xxl-job-admin-*.jar $proj_home/xxl-job-admin/target/app.jar # 兼容所有sh脚本
+docker rmi commons/xxl-job:latest
 docker build -t $img_output .
 
 mkdir -p $PWD/logs
