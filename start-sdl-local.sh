@@ -14,7 +14,7 @@ docker run --rm \
    -v $proj_home:/usr/local/work \
    -w /usr/local/work $img_mvn mvn clean package -U -Dmaven.test.skip=true
 
-sudo mv $proj_home/xxl-job-admin/target/xxl-job-admin-*.jar $proj_home/xxl-job-admin/target/app.jar # 兼容所有sh脚本
+mv $proj_home/xxl-job-admin/target/xxl-job-admin-*.jar $proj_home/xxl-job-admin/target/app.jar # 兼容所有sh脚本
 
 docker build -t $img_output .
 
