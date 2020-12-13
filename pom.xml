@@ -80,7 +80,7 @@
 			<build>
 				<plugins>
 					<!-- Source -->
-					<plugin>
+					<!--<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
 						<version>${maven-source-plugin.version}</version>
@@ -92,9 +92,9 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>
+					</plugin>-->
 					<!-- Javadoc -->
-					<plugin>
+					<!--<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<version>${maven-javadoc-plugin.version}</version>
@@ -109,9 +109,9 @@
 								</configuration>
 							</execution>
 						</executions>
-					</plugin>
+					</plugin>-->
 					<!-- GPG -->
-                    <plugin>
+                    <!--<plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>${maven-gpg-plugin.version}</version>
@@ -126,7 +126,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin>-->
 				</plugins>
 			</build>
 			<distributionManagement>
