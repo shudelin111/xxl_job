@@ -9,5 +9,5 @@ ENV TZ=PRC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
-COPY xxl-job-admin/target/app.jar /usr/local/work/
+COPY app.jar /usr/local/work/
 #ENTRYPOINT ["sh","-c","java -jar $JAVA_OPTS /app.jar $PARAMS"]
