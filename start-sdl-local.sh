@@ -25,13 +25,13 @@ chmod 777 $PWD/logs
 docker rm -f xxl-job &> /dev/null
 
 version=`date "+%Y%m%d%H"`
-#  --net=host \
+#  --net=host \ -p 30120:30120
 # 启动镜像
 docker run -d --restart=on-failure:5 --privileged=true \
     --net=host \
     -w /usr/local/work \
     -v $PWD/doc/logs:/usr/local/work/doc/logs \
-    --name xxl-job -p 30120:30120 commons/xxl-job \
+    --name xxl-job commons/xxl-job \
     java \
         -Duser.timezone=Asia/Shanghai \
         -XX:+PrintGCDateStamps \
@@ -41,4 +41,4 @@ docker run -d --restart=on-failure:5 --privileged=true \
         -Xloggc:logs/gc_$version.log \
         -jar /usr/local/work/app.jar --spring.profiles.active=local-sdl\
 
-docker logs -f xxl-job
+#docker logs -f xxl-job
