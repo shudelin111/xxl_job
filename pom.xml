@@ -142,7 +142,7 @@
 		</profile>
 	</profiles>
 
-	<repositories>
+	<!--<repositories>
 		<repository>
 			<id>nexus-aliyun</id>
 			<name>nexus-aliyun</name>
@@ -154,6 +154,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-	</repositories>
+	</repositories>-->
 
 </project>
