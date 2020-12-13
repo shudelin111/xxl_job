@@ -73,13 +73,13 @@
 		</developer>
 	</developers>
 
-	<profiles>
+	<!--<profiles>
 
 		<profile>
 			<id>release</id>
 			<build>
 				<plugins>
-					<!-- Source -->
+					&lt;!&ndash; Source &ndash;&gt;
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
@@ -93,7 +93,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- Javadoc -->
+					&lt;!&ndash; Javadoc &ndash;&gt;
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -110,7 +110,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- GPG -->
+					&lt;!&ndash; GPG &ndash;&gt;
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -140,7 +140,7 @@
 				</repository>
 			</distributionManagement>
 		</profile>
-	</profiles>
+	</profiles>-->
 
 	<repositories>
 		<repository>
