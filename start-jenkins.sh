@@ -6,6 +6,9 @@ m2_cache=~/.m2                 # the local maven cache dir
 proj_home=$PWD                              # the project root dir
 img_output="commons/xxl-job"         # output image tag
 
+# 删除容器
+docker rm -f xxl-job &> /dev/null
+
 echo "use docker maven"
 docker run --rm \
    -v $m2_cache:/root/.m2 \
@@ -16,9 +19,6 @@ docker build -t $img_output .
 
 mkdir -p $PWD/logs
 chmod 777 $PWD/logs
-
-# 删除容器
-#docker rm -f xxl-job &> /dev/null
 
 version=`date "+%Y%m%d%H"`
 #  --net=host \ -p 30120:30120
