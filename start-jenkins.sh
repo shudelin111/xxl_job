@@ -30,4 +30,3 @@ docker run -d --restart=on-failure:5 --privileged=true \
         -XX:+HeapDumpOnOutOfMemoryError \
         -Xloggc:logs/gc_$version.log \
         -jar /usr/local/work/app.jar --spring.profiles.active=jenkins \
-docker logs xxl-job -f
