@@ -9,12 +9,6 @@ img_output="commons/xxl-job"         # output image tag
 # 删除容器
 docker rm -f xxl-job &> /dev/null
 
-echo "use docker maven"
-docker run --rm \
-   -v $m2_cache:/root/.m2 \
-   -v $proj_home:/usr/local/work \
-   -w /usr/local/work $img_mvn mvn clean package -U -Dmaven.test.skip=true
-
 docker build -t $img_output .
 
 mkdir -p $PWD/logs
