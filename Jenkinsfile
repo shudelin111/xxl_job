@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '开始编译构建'
-                sh 'mvn clean compile -U -DskipTests'
+                sh 'mvn insall -U -DskipTests'
             }
         }
         stage('Push') {
