@@ -39,3 +39,4 @@ docker run -d --restart=on-failure:5 --privileged=true \
     --name xxl-job commons/xxl-job \
 
 docker logs -f xxl-job
+1111111
