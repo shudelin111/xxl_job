@@ -27,6 +27,7 @@ docker rm -f xxl-job &> /dev/null
 version=`date "+%Y%m%d%H"`
 #  --net=host \ -p 30120:30120
 # 启动镜像
+222222
 docker run -d --restart=on-failure:5 --privileged=true \
     --net=host \
     -w /usr/local/work \
