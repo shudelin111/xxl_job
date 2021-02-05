@@ -30,12 +30,12 @@ chmod 777 $PWD/logs
 docker rm -f xxl-job &> /dev/null
 
 version=`date "+%Y%m%d%H"`
-41414124
+41414124111
 # 启动镜像
 docker run -d --restart=on-failure:5 --privileged=true \
     --net=host \
     -w /home \
     -v $PWD/logs:/home/logs \
     --name xxl-job commons/xxl-job \
-341414143
+341414143111
 docker logs -f xxl-job
