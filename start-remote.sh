@@ -30,7 +30,7 @@ docker run -d --restart=on-failure:5 --privileged=true \
     --net=host \
     -w /usr/local/work \
     -v $PWD/doc/logs:/usr/local/work/doc/logs \
-    --name xxl-job -p 30120:30120 commons/xxl-job \
+    --name xxl-job commons/xxl-job \
     java \
         -Duser.timezone=Asia/Shanghai \
         -XX:+PrintGCDateStamps \
